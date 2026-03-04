@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 6 - Gestão de Empreendimentos Construtivos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="presentation">
+        <!-- Slide 1: Capa -->
+        <section class="slide slide-cover">
+            <div class="slide-content">
+                <h1>Aula 6</h1>
+                <h2>Do Cronograma ao Fluxo</h2>
+                <h3>Planejando com Linha de Balanço e Kanban</h3>
+                <div class="slide-footer">
+                    <p>Gestão de Empreendimentos Construtivos</p>
+                    <p>Professora Vic Duarte | 05/03/2026</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 2: Objetivos da Aula -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2>Objetivos de Aprendizagem</h2>
+                <div class="objectives">
+                    <div class="objective-item">
+                        <span class="objective-number">1</span>
+                        <p>Compreender a técnica da Linha de Balanço e sua aplicação em obras repetitivas</p>
+                    </div>
+                    <div class="objective-item">
+                        <span class="objective-number">2</span>
+                        <p>Diferenciar Tempo de Mobilização, Tempo de Base e Tempo de Ritmo</p>
+                    </div>
+                    <div class="objective-item">
+                        <span class="objective-number">3</span>
+                        <p>Conectar fluxo contínuo com Lean Construction</p>
+                    </div>
+                    <div class="objective-item">
+                        <span class="objective-number">4</span>
+                        <p>Introduzir Kanban como método de gestão de fluxo</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: Por que Planejamento de Prazos? -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2>Por que Planejamento de Prazos?</h2>
+                <div class="content-box">
+                    <p>O tempo é um recurso finito e uma das principais fontes de conflito em projetos de construção.</p>
+                </div>
+                <div class="key-points">
+                    <div class="point">
+                        <h4>Impacto Financeiro</h4>
+                        <p>Atrasos geram custos adicionais e reduzem margem</p>
+                    </div>
+                    <div class="point">
+                        <h4>Fluxo Contínuo</h4>
+                        <p>Garantir que recursos não fiquem ociosos</p>
+                    </div>
+                    <div class="point">
+                        <h4>Satisfação do Cliente</h4>
+                        <p>Cumprir prazos é essencial para a reputação</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: Introdução à Linha de Balanço -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2>O que é Linha de Balanço?</h2>
+                <div class="definition-box">
+                    <p><strong>Linha de Balanço</strong> é uma técnica de planejamento visual que representa o avanço de atividades repetitivas ao longo do tempo.</p>
+                </div>
+                <div class="benefits">
+                    <h4>Benefícios:</h4>
+                    <ul>
+                        <li>Visualiza o ritmo de produção</li>
+                        <li>Identifica gargalos e oportunidades</li>
+                        <li>Garante fluxo de trabalho contínuo</li>
+                        <li>Facilita comunicação com equipe</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Variáveis da Linha de Balanço -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2>Variáveis Críticas</h2>
+                <div class="variables-container">
+                    <div class="variable">
+                        <h4>Tm - Tempo de Mobilização</h4>
+                        <p>Atividades iniciais não repetitivas</p>
+                        <p class="example">Ex: Fundação, preparação do canteiro</p>
+                    </div>
+                    <div class="variable">
+                        <h4>Tb - Tempo de Base</h4>
+                        <p>Tempo para a primeira unidade de repetição</p>
+                        <p class="example">Ex: Primeiro pavimento</p>
+                    </div>
+                    <div class="variable">
+                        <h4>Tr - Tempo de Ritmo</h4>
+                        <p>Tempo para as demais unidades</p>
+                        <p class="example">Ex: Pavimentos subsequentes</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Visualizando a Linha de Balanço -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2>Visualizando a Linha de Balanço</h2>
+                <div class="chart-container">
+                    <svg viewBox="0 0 600 400" class="balance-line-chart">
+                        <!-- Eixos -->
+                        <line x1="50" y1="350" x2="550" y2="350" stroke="#333" stroke-width="2"/>
+                        <line x1="50" y1="50" x2="50" y2="350" stroke="#333" stroke-width="2"/>
+                        
+                        <!-- Labels dos eixos -->
+                        <text x="570" y="360" font-size="14">Tempo</text>
+                        <text x="20" y="30" font-size="14">Pavimento</text>
+                        
+                        <!-- Linhas de exemplo -->
+                        <line x1="80" y1="320" x2="150" y2="280" stroke="#FF6B35" stroke-width="3"/>
+                        <line x1="150" y1="280" x2="220" y2="240" stroke="#FF6B35" stroke-width="3"/>
+                        <line x1="220" y1="240" x2="290" y2="200" stroke="#FF6B35" stroke-width="3"/>
+                        <line x1="290" y1="200" x2="360" y2="160" stroke="#FF6B35" stroke-width="3"/>
+                        
+                        <!-- Marcadores -->
+                        <circle cx="80" cy="320" r="4" fill="#FF6B35"/>
+                        <circle cx="150" cy="280" r="4" fill="#FF6B35"/>
+                        <circle cx="220" cy="240" r="4" fill="#FF6B35"/>
+                        <circle cx="290" cy="200" r="4" fill="#FF6B35"/>
+                        <circle cx="360" cy="160" r="4" fill="#FF6B35"/>
+                        
+                        <!-- Labels -->
+                        <text x="70" y="340" font-size="12">Pav 1</text>
+                        <text x="140" y="300" font-size="12">Pav 2</text>
+                        <text x="210" y="260" font-size="12">Pav 3</text>
+                        <text x="280" y="220" font-size="12">Pav 4</text>
+                    </svg>
+                </div>
+                <p class="chart-note">A inclinação da linha representa a produtividade e o ritmo de trabalho</p>
+            </div>
+        </section>
+
+        <!-- Slide 7: Lean Construction - Introdução -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2>Lean Construction</h2>
+                <div class="definition-box">
+                    <p><strong>Lean Construction</strong> é uma filosofia de gestão focada em maximizar valor e minimizar desperdícios.</p>
+                </div>
+                <div class="lean-principles">
+                    <h4>5 Princípios Fundamentais:</h4>
+                    <ol>
+                        <li><strong>Valor:</strong> O que o cliente está disposto a pagar</li>
+                        <li><strong>Fluxo de Valor:</strong> Todas as etapas para entregar o valor</li>
+                        <li><strong>Fluxo Contínuo:</strong> Eliminar interrupções e esperas</li>
+                        <li><strong>Produção Puxada:</strong> Produzir apenas quando há demanda</li>
+                        <li><strong>Perfeição:</strong> Melhoria contínua</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 8: Fluxo Contínuo -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2>Fluxo Contínuo</h2>
+                <div class="content-box">
+                    <p>Eliminar interrupções, esperas e movimentações desnecessárias.</p>
+                </div>
+                <div class="flow-comparison">
+                    <div class="flow-bad">
+                        <h4>❌ Fluxo Interrompido</h4>
+                        <ul>
+                            <li>Equipes aguardando materiais</li>
+                            <li>Retrabalho e desperdícios</li>
+                            <li>Baixa produtividade</li>
+                            <li>Custos elevados</li>
+                        </ul>
+                    </div>
+                    <div class="flow-good">
+                        <h4>✓ Fluxo Contínuo</h4>
+                        <ul>
+                            <li>Recursos sempre ocupados</li>
+                            <li>Qualidade melhorada</li>
+                            <li>Alta produtividade</li>
+                            <li>Custos reduzidos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 9: Canteiro de Obras -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2>Canteiro de Obras</h2>
+                <div class="definition-box">
+                    <p>O canteiro é o "local de produção" onde o fluxo de trabalho acontece.</p>
+                </div>
+                <div class="canteiro-elements">
+                    <h4>Componentes Essenciais:</h4>
+                    <div class="elements-grid">
+                        <div class="element">
+                            <h5>Armazenamento</h5>
+                            <p>Materiais organizados e acessíveis</p>
+                        </div>
+                        <div class="element">
+                            <h5>Circulação</h5>
+                            <p>Caminhos claros e seguros</p>
+                        </div>
+                        <div class="element">
+                            <h5>Áreas de Trabalho</h5>
+                            <p>Espaços definidos por atividade</p>
+                        </div>
+                        <div class="element">
+                            <h5>Segurança</h5>
+                            <p>Proteção e prevenção de acidentes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 10: Kanban - Introdução -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2>O que é Kanban?</h2>
+                <div class="definition-box">
+                    <p><strong>Kanban</strong> é um método para gerenciar o fluxo de trabalho, tornando-o visível e controlado.</p>
+                </div>
+                <div class="kanban-info">
+                    <p><em>"Kanban" significa "cartão" ou "sinal" em japonês</em></p>
+                    <h4>Princípios Fundamentais:</h4>
+                    <ul>
+                        <li><strong>Visualizar:</strong> Tornar o trabalho visível</li>
+                        <li><strong>Limitar WIP:</strong> Evitar sobrecarga (Work In Progress)</li>
+                        <li><strong>Gerenciar Fluxo:</strong> Manter o trabalho fluindo</li>
+                        <li><strong>Melhorar Continuamente:</strong> Ajustar e otimizar</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 11: Quadro Kanban Simples -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2>Quadro Kanban para Obras</h2>
+                <div class="kanban-board">
+                    <div class="kanban-column">
+                        <h4>A Fazer</h4>
+                        <div class="kanban-card">Pacote 1</div>
+                        <div class="kanban-card">Pacote 2</div>
+                        <div class="kanban-card">Pacote 3</div>
+                    </div>
+                    <div class="kanban-column">
+                        <h4>Em Andamento</h4>
+                        <div class="kanban-card active">Pacote 4</div>
+                        <div class="kanban-card active">Pacote 5</div>
+                    </div>
+                    <div class="kanban-column">
+                        <h4>Feito</h4>
+                        <div class="kanban-card done">Pacote 6</div>
+                        <div class="kanban-card done">Pacote 7</div>
+                    </div>
+                </div>
+                <p class="kanban-note">Limite WIP: máximo 2 pacotes em andamento</p>
+            </div>
+        </section>
+
+        <!-- Slide 12: Benefícios do Kanban -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2>Benefícios do Kanban</h2>
+                <div class="benefits-container">
+                    <div class="benefit-item">
+                        <h4>📊 Visibilidade</h4>
+                        <p>Todos sabem o status do trabalho</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>🎯 Foco</h4>
+                        <p>Limite de WIP evita multitarefa</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>⚡ Eficiência</h4>
+                        <p>Fluxo contínuo e sem gargalos</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>🔄 Comunicação</h4>
+                        <p>Facilita diálogo entre equipes</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>📈 Melhoria</h4>
+                        <p>Identifica problemas rapidamente</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h4>💰 Economia</h4>
+                        <p>Reduz custos e retrabalho</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 13: Exemplo Prático - Mini Caso -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2>Exemplo Prático</h2>
+                <div class="case-box">
+                    <h4>Construção de um Prédio de 4 Andares</h4>
+                    <p><strong>Cenário:</strong> Estrutura, alvenaria, revestimento e acabamento em cada pavimento.</p>
+                </div>
+                <div class="case-analysis">
+                    <div class="case-item">
+                        <h5>Linha de Balanço:</h5>
+                        <p>Estrutura: 7 dias/pav | Alvenaria: 5 dias/pav | Revestimento: 4 dias/pav</p>
+                    </div>
+                    <div class="case-item">
+                        <h5>Kanban:</h5>
+                        <p>Máximo 2 pavimentos em estrutura | Máximo 2 em alvenaria | Máximo 2 em revestimento</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 14: Conectando os Conceitos -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2>Conectando os Conceitos</h2>
+                <div class="connection-flow">
+                    <div class="flow-step">
+                        <div class="step-number">1</div>
+                        <p><strong>Linha de Balanço</strong><br>Define o ritmo</p>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="flow-step">
+                        <div class="step-number">2</div>
+                        <p><strong>Lean Construction</strong><br>Filosofia de fluxo</p>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="flow-step">
+                        <div class="step-number">3</div>
+                        <p><strong>Kanban</strong><br>Executa o fluxo</p>
+                    </div>
+                </div>
+                <div class="connection-result">
+                    <p><strong>Resultado:</strong> Obra planejada, ritmo mantido, fluxo contínuo e custos controlados</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 15: Resumo da Aula -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2>Resumo da Aula</h2>
+                <div class="summary-box">
+                    <ul>
+                        <li><strong>Linha de Balanço:</strong> Técnica para visualizar ritmo de produção em atividades repetitivas</li>
+                        <li><strong>Variáveis:</strong> Tm (mobilização), Tb (base), Tr (ritmo)</li>
+                        <li><strong>Lean Construction:</strong> Filosofia de maximizar valor e minimizar desperdícios</li>
+                        <li><strong>Fluxo Contínuo:</strong> Eliminar interrupções e manter recursos ocupados</li>
+                        <li><strong>Canteiro de Obras:</strong> Local onde o fluxo acontece - deve ser bem planejado</li>
+                        <li><strong>Kanban:</strong> Método prático para gerenciar e visualizar o fluxo</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 16: Próxima Aula -->
+        <section class="slide slide-closing">
+            <div class="slide-content">
+                <h2>Próxima Aula</h2>
+                <div class="next-class">
+                    <h3>Aula 7: Apresentação do Seminário</h3>
+                    <p>Os alunos apresentarão o planejamento inicial de seus empreendimentos simulados, aplicando os conceitos de viabilidade, custos e prazos.</p>
+                    <p><strong>Data:</strong> 12/03/2026</p>
+                </div>
+                <div class="closing-message">
+                    <p>Até a próxima aula!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 17: Referências Bibliográficas -->
+        <section class="slide slide-references">
+            <div class="slide-content">
+                <h2>Referências Bibliográficas</h2>
+                <div class="references-list">
+                    <p><strong>Mattos, A. D.</strong> (2010). <em>Planejamento e controle de obras</em>. Pini.</p>
+                    <p><strong>Rother, M., & Shook, J.</strong> (2003). <em>Aprendendo a enxergar: mapeando o fluxo de valor para agregar valor e eliminar o desperdício</em>. Lean Institute Brasil.</p>
+                    <p><strong>Koskela, L.</strong> (1992). <em>Application of the new production philosophy to construction</em>. Technical Report 72, CIFE, Stanford University.</p>
+                    <p><strong>Liker, J. K.</strong> (2004). <em>O modelo Toyota: 14 princípios de gestão do maior fabricante do mundo</em>. Bookman.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
